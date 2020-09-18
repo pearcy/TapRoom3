@@ -2,7 +2,7 @@ import kegListReducer from '../../reducers/keg-list-reducer';
 
 describe('kegListReducer', () => {
 
-    let action:;
+    let action;
     const kegData = {
         brand: 'Flying Dog',
         varietal: 'Stout',
@@ -11,10 +11,10 @@ describe('kegListReducer', () => {
         id: 1
     };
 
-    test('Should succesfuly add new keg to masterTicketList', () => {
+    test('Should succesfuly add new keg to masterKegList', () => {
         const { brand, varietal, price, abv, id } = kegData;
         action = {
-            type: 'ADD_TICKET',
+            type: 'ADD_KEG',
             brand: brand,
             varietal: varietal,
             price: price,
