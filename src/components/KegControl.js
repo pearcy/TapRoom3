@@ -30,12 +30,23 @@ class KegControl extends React.Component {
       }
 
       handleAddingNewKegToList = (newKeg) => {
-          const newMasterKegList = this.state.masterKegList
-          .concat(newKeg);
-          this.setState({
-            masterKegList: newMasterKegList,
-            formVisibleOnPage: false
-        });
+          const { dispatch } = this.props;
+          const { id, brand, varietal, price, abv }
+          const action = {
+            type: 'ADD_TICKET',
+            id: id,
+            brand: brand,
+            varietal: varietal,
+            price: price,
+            abv: abv,
+          }
+          dispatch(action);
+          this.setState({formVisibleOnPage: false});
+        }
+
+ 
+      handleEditingKegInList = (id) => {
+
       }
 
       handleChangingSelectedKeg = (id) => {
