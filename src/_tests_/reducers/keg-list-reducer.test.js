@@ -1,8 +1,8 @@
-import kegListReducer from '../../reducers/ticket-list-reducer';
+import kegListReducer from '../../reducers/keg-list-reducer';
 
-describe('ticketListReducerr', () => {
+describe('kegListReducer', () => {
     test('Should return default state if ther is no action type passed into the reducer', () => {
-        expect(ticketListReducer({}, { tpe: null })).toEqual({});
+        expect(kegListReducer({}, { tpe: null })).toEqual({});
     });
 });
 
