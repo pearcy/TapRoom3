@@ -19,7 +19,7 @@ describe('kegListReducer', () => {
     }
 
     test('Should succesfuly add new keg to masterKegList', () => {
-        const { brand, varietal, price, abv, id } = kegData;
+        const { brand, varietal, price, abv, id } = currentState;
         action = {
             type: 'ADD_KEG',
             brand: brand,
@@ -45,7 +45,7 @@ describe('kegListReducer', () => {
 
     test('Should successfuly delete a keg', () => {
         action = {
-            type: 'DELETE_KEG'
+            type: 'DELETE_KEG',
             id: 1
         };
         expect(kegListReducer(currentState, action)).toEqual({
