@@ -50,14 +50,13 @@ describe('kegListReducer', () => {
         };
         expect(kegListReducer(currentState, action)).toEqual({
             2: {
-                brand: 'Flying Dog',
-                varietal: 'Stout',
+                brand: 'Flying Frog',
+                varietal: 'Ale',
                 price: 4,
                 abv: 3,
-                id: 
-            }
-        })
-    })
+                id: 2 }
+        });
+    });
 
 
 });
