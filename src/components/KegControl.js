@@ -56,7 +56,9 @@ class KegControl extends React.Component {
         if (keg.pintCount > 0) {
             keg.pintCount --;
             }
-            const changedMasterKegList = this.state.masterKegList.filter(keg => keg.id !== this.state.selectedKeg.id).concat(keg);
+            const changedMasterKegList = this.state.masterKegList
+            .filter(keg => keg.id !== this.state.selectedKeg.id)
+            .concat(keg);
             this.setState({
                 masterKegList: changedMasterKegList,
                 editing: false,
