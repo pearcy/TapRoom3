@@ -31,7 +31,7 @@ class KegControl extends React.Component {
 
       handleAddingNewKegToList = (newKeg) => {
           const { dispatch } = this.props;
-          const { id, brand, varietal, price, abv }
+          const { id, brand, varietal, price, abv } = newKeg;
           const action = {
             type: 'ADD_TICKET',
             id: id,
@@ -45,9 +45,24 @@ class KegControl extends React.Component {
         }
 
  
-      handleEditingKegInList = (id) => {
-
+      handleEditingKegInList = (kegToEdit) => {
+          const { dispatch } = this.props;
+          const { id, brand, varietal, price, abv } = kegToEdit;
+          const action = {
+              type: 'ADD_TICKET',
+              id: id,
+              brand: brand,
+              varietal: varietal,
+              price: price,
+              abv: abv,
+          }
+          dispatch(action);
+          this.setState({
+              editing: false,
+              selectedKeg: null
+          });
       }
+
 
       handleChangingSelectedKeg = (id) => {
           const selectedKeg = this.state.masterKegList
@@ -57,14 +72,15 @@ class KegControl extends React.Component {
       }
 
       handleDeletingKeg = (id) => {
-          const newMasterKegList = this.state.masterKegList
-          .filter(ticket => ticket.id !== id);
-          this.setState({
-              masterKegList: newMasterKegList,
-              selectedKeg: null
-          });
+          const { dispath } = this.props;
+          const action = {
+              type: 'DELETE_TICKET',
+              id: id
+          }
+          dispatch(action);
+          this.setState({selectedKeg: null
+        });
       }
-
 
     handlePintPour = (id) => {
         const keg = this.state.masterKegList
