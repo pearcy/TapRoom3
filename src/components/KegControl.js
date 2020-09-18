@@ -2,13 +2,14 @@ import React from "react";
 import KegList from './KegList';
 import KegForm from './KegForm';
 import KegDetail from './KegDetail';
+import { connect } from 'react-redux';
 
 class KegControl extends React.Component {
     constructor(props) {
         super(props);
+        console.log(props);
         this.state = {
             formVisibleOnPage: false,
-            masterKegList: [],
             selectedKeg: null,
             editing: false
         };
@@ -29,7 +30,8 @@ class KegControl extends React.Component {
       }
 
       handleAddingNewKegToList = (newKeg) => {
-          const newMasterKegList = this.state.masterKegList.concat(newKeg);
+          const newMasterKegList = this.state.masterKegList
+          .concat(newKeg);
           this.setState({
             masterKegList: newMasterKegList,
             formVisibleOnPage: false
@@ -37,13 +39,15 @@ class KegControl extends React.Component {
       }
 
       handleChangingSelectedKeg = (id) => {
-          const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
+          const selectedKeg = this.state.masterKegList
+          .filter(keg => keg.id === id)[0];
           this.setState({selectedKeg: selectedKeg
         });
       }
 
       handleDeletingKeg = (id) => {
-          const newMasterKegList = this.state.masterKegList.filter(ticket => ticket.id !== id);
+          const newMasterKegList = this.state.masterKegList
+          .filter(ticket => ticket.id !== id);
           this.setState({
               masterKegList: newMasterKegList,
               selectedKeg: null
@@ -52,7 +56,8 @@ class KegControl extends React.Component {
 
 
     handlePintPour = (id) => {
-        const keg = this.state.masterKegList.filter(keg => keg.id === id)[0];
+        const keg = this.state.masterKegList
+        .filter(keg => keg.id === id)[0];
         if (keg.pintCount > 0) {
             keg.pintCount --;
             }
@@ -98,5 +103,6 @@ class KegControl extends React.Component {
 
 };
 
+KegControl = connect()(KegControl);
 
 export default KegControl;
