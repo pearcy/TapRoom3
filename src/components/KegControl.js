@@ -71,7 +71,7 @@ class KegControl extends React.Component {
       }
 
       handleDeletingKeg = (id) => {
-          const { dispath } = this.props;
+          const { dispatch } = this.props;
           const action = {
               type: 'DELETE_TICKET',
               id: id
@@ -81,20 +81,20 @@ class KegControl extends React.Component {
         });
       }
 
-    handlePintPour = (id) => {
-        const keg = this.state.masterKegList
-        .filter(keg => keg.id === id)[0];
-        if (keg.pintCount > 0) {
-            keg.pintCount --;
-            }
-            const changedMasterKegList = this.state.masterKegList
-            .filter(keg => keg.id !== this.state.selectedKeg.id)
-            .concat(keg);
-            this.setState({
-                masterKegList: changedMasterKegList,
-                editing: false,
-            });
-        }
+    // handlePintPour = (id) => {
+    //     const keg = this.state.masterKegList
+    //     .filter(keg => keg.id === id)[0];
+    //     if (keg.pintCount > 0) {
+    //         keg.pintCount --;
+    //         }
+    //         const changedMasterKegList = this.state.masterKegList
+    //         .filter(keg => keg.id !== this.state.selectedKeg.id)
+    //         .concat(keg);
+    //         this.setState({
+    //             masterKegList: changedMasterKegList,
+    //             editing: false,
+    //         });
+    //     }
       
         render() {
             let currentlyVisibleState = null;
@@ -103,7 +103,8 @@ class KegControl extends React.Component {
             if (this.state.selectedKeg !=null) {
                 currentlyVisibleState = <KegDetail 
                 keg = {this.state.selectedKeg} 
-                onPintPour = {this.handlePintPour}/>
+                // onPintPour = {this.handlePintPour}
+                />
                 buttonText = "Return to List";
             }
 
