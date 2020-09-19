@@ -6,7 +6,6 @@ import KegControl from "./components/KegControl";
 
 function App() {
   return (
-    
     <StyledContainer>
       <Header />
       <KegControl />

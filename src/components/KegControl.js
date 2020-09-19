@@ -34,7 +34,7 @@ class KegControl extends React.Component {
           const { dispatch } = this.props;
           const { id, brand, varietal, price, abv } = newKeg;
           const action = {
-            type: 'ADD_TICKET',
+            type: 'ADD_KEG',
             id: id,
             brand: brand,
             varietal: varietal,
@@ -50,7 +50,7 @@ class KegControl extends React.Component {
           const { dispatch } = this.props;
           const { id, brand, varietal, price, abv } = kegToEdit;
           const action = {
-              type: 'ADD_TICKET',
+              type: 'ADD_KEG',
               id: id,
               brand: brand,
               varietal: varietal,
@@ -73,7 +73,7 @@ class KegControl extends React.Component {
       handleDeletingKeg = (id) => {
           const { dispatch } = this.props;
           const action = {
-              type: 'DELETE_TICKET',
+              type: 'DELETE_KEG',
               id: id
           }
           dispatch(action);

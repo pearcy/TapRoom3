@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from "prop-types";
 // import Keg from './Keg';
 
-
 function KegDetail(props) {
     const { keg } = props;
 
@@ -33,7 +32,6 @@ function KegDetail(props) {
             );
             
 }
-
 
 KegDetail.propTypes = {
     keg: PropTypes.object,
