@@ -4,16 +4,14 @@ import Keg from "./Keg";
 
 
 function KegList(props) {
-  
-
   return (
     <React.Fragment>
      <div className="p-10">
       <header>Keg List</header> 
          <div className="border shadow rounded-lg p-10">
             <div className="max-w-xl flex-column">
-            {props.kegList.map((keg) => 
-                <Keg 
+              {Object.values(props.kegList).map((keg) => 
+              <Keg
                 whenKegClicked = { props.onKegSelection }
                 brand={keg.brand}
                 varietal={keg.varietal}
@@ -31,7 +29,7 @@ function KegList(props) {
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.array,
+  kegList: PropTypes.object,
   onKegSelection: PropTypes.func
 };
 
