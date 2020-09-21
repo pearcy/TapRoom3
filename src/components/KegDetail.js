@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import PintPour from "./PintPour";
-// import Keg from './Keg';
+
 
 function KegDetail(props) {
     const { keg, onPintPour } = props;
