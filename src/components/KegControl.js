@@ -66,8 +66,7 @@ class KegControl extends React.Component {
 
       handleSelectedKeg = (id) => {
           const selectedKeg = this.props.masterKegList[id];
-          this.setState({selectedKeg: selectedKeg
-        });
+          this.setState({selectedKeg: selectedKeg});
       }
 
       handleDeletingKeg = (id) => {
@@ -83,7 +82,7 @@ class KegControl extends React.Component {
 
 
       handlePintPour = (id) => {
-        const selectedKeg = this.state.masterKegList.filter(keg => keg.id !== id)[0];
+        const selectedKeg = this.props.masterKegList[id];
         if(this.state.selectedKeg.pintCount > 0) {
             this.state.selectedKeg.pintCount = this.state.selectedKeg.pintCount -1;
             this.setState({ selectedKeg: this.state.selectedKeg});

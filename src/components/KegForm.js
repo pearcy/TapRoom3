@@ -31,6 +31,10 @@ function KegForm(props) {
 
 
 KegForm.propTypes = {
+    brand: PropTypes.string.isRequired,
+    varietal: PropTypes.string,
+    price: PropTypes.string,
+    abv: PropTypes.string,
     onNewKegCreation: PropTypes.func
 };
 

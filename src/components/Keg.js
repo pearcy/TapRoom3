@@ -19,9 +19,9 @@ function Keg(props) {
                 <div className="flex-grow text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
                     <h4>{props.abv}</h4>
                 </div>  
-                <div className="flex-grow text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
+                {/* <div className="flex-grow text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
                     <h4>{props.pintCount}</h4>
-                </div> 
+                </div>  */}
              </div> 
         </div>
       </div>
@@ -34,6 +34,7 @@ Keg.propTypes = {
   varietal: PropTypes.string,
   price: PropTypes.string,
   abv: PropTypes.string,
+  id: PropTypes.string,
   whenKegClicked: PropTypes.func
 };
 

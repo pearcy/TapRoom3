@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import PintPour from "./PintPour";
 // import Keg from './Keg';
 
 function KegDetail(props) {
-    const { keg } = props;
+    const { keg, onPintPour } = props;
 
             return (
             <React.Fragment>
@@ -24,9 +25,12 @@ function KegDetail(props) {
                 <div className="flex-grow text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
                     <h4>{keg.pintCount}</h4>
                 </div>
-                {/* <div className="flex text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">  
+                <div className="flex text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">  
                 <button onClick={() => props.onPintPour(keg.id) }>Pour</button>
-                </div> */}
+                </div>
+                <PintPour
+                    handlePintPour = { props.handlePintPour } pintCount = { keg.pintCount }
+                    />
             </div> 
             </React.Fragment>
             );
@@ -35,7 +39,7 @@ function KegDetail(props) {
 
 KegDetail.propTypes = {
     keg: PropTypes.object,
-    // handlePintPour: PropTypes.func
+    handlePintPour: PropTypes.func
 };
 
 export default KegDetail;
