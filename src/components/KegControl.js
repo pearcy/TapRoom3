@@ -81,20 +81,15 @@ class KegControl extends React.Component {
         });
       }
 
-    // handlePintPour = (id) => {
-    //     const keg = this.state.masterKegList
-    //     .filter(keg => keg.id === id)[0];
-    //     if (keg.pintCount > 0) {
-    //         keg.pintCount --;
-    //         }
-    //         const changedMasterKegList = this.state.masterKegList
-    //         .filter(keg => keg.id !== this.state.selectedKeg.id)
-    //         .concat(keg);
-    //         this.setState({
-    //             masterKegList: changedMasterKegList,
-    //             editing: false,
-    //         });
-    //     }
+
+      handlePintPour = (id) => {
+        const selectedKeg = this.state.masterKegList.filter(keg => keg.id !== id)[0];
+        if(this.state.selectedKeg.pintCount > 0) {
+            this.state.selectedKeg.pintCount = this.state.selectedKeg.pintCount -1;
+            this.setState({ selectedKeg: this.state.selectedKeg});
+        }
+      }
+
       
         render() {
             let currentlyVisibleState = null;
@@ -103,7 +98,7 @@ class KegControl extends React.Component {
             if (this.state.selectedKeg !=null) {
                 currentlyVisibleState = <KegDetail 
                 keg = {this.state.selectedKeg} 
-                // onPintPour = {this.handlePintPour}
+                onPintPour = {this.handlePintPour}
                 />
                 buttonText = "Return to List";
             }
@@ -116,7 +111,7 @@ class KegControl extends React.Component {
                 currentlyVisibleState = <KegList 
                 kegList={this.props.masterKegList} 
                 onKegSelection={this.handleSelectedKeg}
-                 />;
+                 />
                 buttonText = "Add Keg" 
                 }
                 
