@@ -30,7 +30,7 @@ function KegDetail(props) {
                 </div>
                 <PintPour
                     handlePintPour = { props.handlePintPour } pintCount = { keg.pintCount }
-                    />
+                />
             </div> 
             </React.Fragment>
             );

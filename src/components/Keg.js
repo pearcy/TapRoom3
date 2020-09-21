@@ -34,7 +34,6 @@ Keg.propTypes = {
   varietal: PropTypes.string,
   price: PropTypes.string,
   abv: PropTypes.string,
-  id: PropTypes.string,
   whenKegClicked: PropTypes.func
 };
 
